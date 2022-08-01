@@ -1,0 +1,19 @@
+---js
+{
+  pagination: {
+    data: "calendar.index",
+    size: 1,
+    alias: "calDate",
+  },
+  eleventyComputed: {
+    permalink: (data) => `calendar/${ data.calDate.year }-${ data.calDate.month }/`,
+    title: (data) => `url = ${data.page.url}`
+  }
+}
+---
+
+<header>
+  <h1>{{ title }}</h1>
+</header>
+
+<pre><code>{{ calDate }}</code></pre>
